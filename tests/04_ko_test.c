@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 11:06:59 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 11:07:01 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 11:06:41 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 11:06:42 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "launcher.h"
+#include <string.h>
 
-int		main(void)
+#include "libftasm.h"
+
+int		ko_test(void)
 {
-	launcher();
-	return (0);
+	if (ft_strlen("wpeinfowenrfiuwerng") == strlen("toto"))
+		return (0);
+	else
+		return (-1);
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRLEN_BASIC_TEST_H
-# define FT_STRLEN_BASIC_TEST_H
+#ifndef KO_TEST_H
+# define KO_TEST_H
 
-int		basic_test(void);
+int		ko_test(void);
 
 #endif

@@ -1,16 +1,44 @@
 #include <sys/wait.h>
 #include <stdlib.h>
+#include <signal.h>
 
 #include "libunit.h"
 #include "libftasm.h"
+#include "libftprintf.h"
 
-int		display_name(char const *name)
+static int		display_name(char const *name)
 {
-	ft_putstr(name);
+	ft_printf("\t%20s: [", name);
 	return (0);
 }
 
-int		fork_and_run(t_unit_test *current)
+static int		display_status(int stat_loc)
+{
+	if (WIFEXITED(stat_loc))
+	{
+		if (WEXITSTATUS(stat_loc))
+			return (ft_putstr("\033[91mKO\033[39m]\n"));
+		else
+			return (!ft_putstr("\033[92mOK\033[39m]\n"));
+	}
+	else if (WIFSIGNALED(stat_loc))
+	{
+		if (WTERMSIG(stat_loc) == SIGSEGV)
+			ft_putstr("\033[91mSEGV\033[39m]\n");
+		else if (WTERMSIG(stat_loc) == SIGBUS)
+			ft_putstr("\033[91mBUSE\033[39m]\n");
+		else
+			ft_putstr("\033[91m...\033[39m]\n");
+		return (0);
+	}
+	else
+	{
+		ft_putstr("\033[91mnope\033[39m]\n");
+		return (0);
+	}
+}
+
+static int		fork_and_run(t_unit_test *current)
 {
 	int		pid;
 	int		stat_loc;
@@ -19,14 +47,14 @@ int		fork_and_run(t_unit_test *current)
 	pid = fork();
 	if (pid == 0)
 	{
-		current->f();
-
-		exit(0);
+		exit(current->f());
+		// exit(0);
 	}
 	else
 	{
 		if (pid == wait(&stat_loc))
 		{
+			display_status(stat_loc);
 			return (1);
 		}
 		else
@@ -34,7 +62,7 @@ int		fork_and_run(t_unit_test *current)
 	}
 }
 
-int		run_tests(t_unit_test **list)
+int				run_tests(t_unit_test **list)
 {
 	t_result	result;
 	t_unit_test	*tmp;

@@ -22,21 +22,21 @@ $(NAME): $(OBJ_FRAMEWORK)
 	ar rc $@ $(OBJ_FRAMEWORK)
 
 $(OBJ_DIR_FRAMEWORK)/%.o: $(SRC_DIR_FRAMEWORK)/%.c
-	$(GCC) $(FLAGS) -c $< -o $@ -I $(INCLUDES_DIR_FRAMEWORK) -I libft/includes
+	$(GCC) $(FLAGS) -c $< -o $@ -I $(INCLUDES_DIR_FRAMEWORK) -I libft/includes -I ft_printf
 
 lib:
-	make -C libft
-	make -C ft_printf
+	make -s -C libft
+	make -s -C ft_printf
 
 clean:
 	make clean -C libft
 	make clean -C ft_printf
-	$(RM) -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
 	make fclean -C libft
 	make fclean -C ft_printf
-	$(RM) libft.a libftasm.a $(NAME)
+	$(RM) libft.a libftasm.a $(NAME) libftprintf.a
 
 re: clean fclean all
 

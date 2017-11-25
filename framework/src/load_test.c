@@ -2,7 +2,6 @@
 
 #include "libunit.h"
 #include "libftasm.h"
-#include "libft.h"//
 
 static int	init_new_test(t_unit_test *new, char const *name, int (*f)(void))
 {
@@ -25,10 +24,7 @@ int			load_test(t_unit_test **list, char const *name , int (*f)(void))
 	else
 	{
 		if (!(*list))
-		{
 			*list = new;
-
-		}
 		else
 		{
 			(*list)->last->next = new;

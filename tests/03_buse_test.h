@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_buse_test.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 11:06:59 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 11:07:01 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 12:16:46 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 12:16:50 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "launcher.h"
+#ifndef BUSE_TEST_H
+# define BUSE_TEST_H
 
-int		main(void)
-{
-	launcher();
-	return (0);
-}
+int		buse_test(void);
+
+#endif

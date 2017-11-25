@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test_ft_strlen.c                          :+:      :+:    :+:   */
+/*   01_basic_test.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 11:06:41 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 11:06:42 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 12:16:46 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 12:16:50 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#ifndef BASIC_TEST_H
+# define BASIC_TEST_H
 
-#include "libftasm.h"
+int		basic_test(void);
 
-int		basic_test(void)
-{
-	char const	*s = "toto";
-	if (strlen(s) == ft_strlen(s))
-		return (0);
-	else
-		return (-1);
-}
+#endif

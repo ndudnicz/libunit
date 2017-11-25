@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_segv_test.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 11:06:59 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 11:07:01 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 12:16:46 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 12:16:50 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "launcher.h"
+#ifndef SEGV_TEST_H
+# define SEGV_TEST_H
 
-int		main(void)
-{
-	launcher();
-	return (0);
-}
+int		segv_test(void);
+
+#endif
