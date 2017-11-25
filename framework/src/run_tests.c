@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   run_tests.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 16:18:20 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 16:18:28 by ndudnicz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -46,10 +58,7 @@ static int		fork_and_run(t_unit_test *current)
 	pid = 0;
 	pid = fork();
 	if (pid == 0)
-	{
 		exit(current->f());
-		// exit(0);
-	}
 	else
 	{
 		if (pid == wait(&stat_loc))

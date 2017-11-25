@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_test.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/25 16:17:58 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 16:18:11 by ndudnicz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 #include "libunit.h"
@@ -14,7 +26,7 @@ static int	init_new_test(t_unit_test *new, char const *name, int (*f)(void))
 		return (0);
 }
 
-int			load_test(t_unit_test **list, char const *name , int (*f)(void))
+int			load_test(t_unit_test **list, char const *name, int (*f)(void))
 {
 	t_unit_test		*new;
 
