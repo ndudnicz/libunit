@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher.c                                      :+:      :+:    :+:   */
+/*   00_launcher_bzero.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 11:06:26 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 11:06:29 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 18:22:39 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 18:22:40 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-#include "libunit.h"
-#include "01_basic_test.h"
-#include "02_segv_test.h"
-#include "03_buse_test.h"
-#include "04_ko_test.h"
 #include "libft.h"
+#include "libunit.h"
+#include "01_basic_test_bzero.h"
 
-int		launcher(void)
+int		launcher_bzero(void)
 {
 	t_unit_test		*list;
 
-	list = NULL;
-	ft_putendl("FT_STRLEN:");
-	load_test(&list, "Basic test", &basic_test);
-	load_test(&list, "segv test", &segv_test);
-	load_test(&list, "buse test", &buse_test);
-	load_test(&list, "ko test", &ko_test);
+	ft_putendl("FT_BZERO:");
+	load_test(&list, "Basic test", &basic_test_bzero);
 	return (run_tests(&list));
 }

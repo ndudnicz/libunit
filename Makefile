@@ -4,7 +4,7 @@ GCC = gcc
 
 OBJ = $(SRC:%.c=%.o)
 
-FLAGS =  -Wextra -Wall #-Werror
+FLAGS = -Wextra -Wall -Werror
 
 SRC_FRAMEWORK = load_test.c run_tests.c
 
@@ -38,6 +38,6 @@ fclean: clean
 	make fclean -C ft_printf
 	$(RM) libft.a libftasm.a $(NAME) libftprintf.a
 
-re: clean fclean all
+re: fclean all
 
 .PHONY: all libasm obj clean fclean re libftasm
