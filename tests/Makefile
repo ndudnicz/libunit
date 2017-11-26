@@ -27,7 +27,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(GCC) $(FLAGS) -c $< -o $@ -I . -I ../framework/includes -I ../libft/includes
 
 $(OBJ_DIR)/%.o: $(SRC_TEST_DIR)/%.c
-	$(GCC) $(FLAGS) -c $< -o $@ -I . -I ../framework/includes -I ../libft/includes
+	$(GCC) $(FLAGS) -c $< -o $@ -I 4tests -I ../framework/includes -I ../libft/includes
 
 clean:
 	$(RM) $(OBJ)
