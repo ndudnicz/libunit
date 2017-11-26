@@ -12,15 +12,29 @@
 
 #include "libft.h"
 #include "libunit.h"
-#include "01_basic_test_bzero.h"
+#include "01_basic_test_isalpha.h"
+#include "02_basic_test_isalpha.h"
+#include "03_basic_test_isalpha.h"
+#include "04_basic_test_isalpha.h"
+#include "05_basic_test_isalpha.h"
+#include "06_basic_test_isalpha.h"
+#include "07_basic_test_isalpha.h"
+#include "08_basic_test_isalpha.h"
 
-int		launcher_bzero(void)
+int		launcher_isalpha(void)
 {
 	t_unit_test		*list;
 
 	list = NULL;
-	ft_putendl("FT_BZERO:");
-	load_test(&list, "Basic test 01", &basic_test_bzero);
+	ft_putendl("FT_ISALPHA:");
+	load_test(&list, "Basic test 01", &ft_01_basic_test_isalpha);
+	load_test(&list, "Basic test 02", &ft_02_basic_test_isalpha);
+	load_test(&list, "Basic test 03", &ft_03_basic_test_isalpha);
+	load_test(&list, "Basic test 04", &ft_04_basic_test_isalpha);
+	load_test(&list, "Basic test 05", &ft_05_basic_test_isalpha);
+	load_test(&list, "Basic test 06", &ft_06_basic_test_isalpha);
+	load_test(&list, "Basic test 07", &ft_07_basic_test_isalpha);
+	load_test(&list, "Basic test 08", &ft_08_basic_test_isalpha);
 	run_tests(&list);
 	free_list(list);
 	list = NULL;

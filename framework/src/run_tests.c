@@ -29,19 +29,18 @@ static int		display_status(int stat_loc)
 	if (WIFEXITED(stat_loc))
 	{
 		if (WEXITSTATUS(stat_loc))
-			return (ft_putstr("\033[91mKO\033[39m]\n"));
+			return (!ft_putstr("\033[91mKO\033[39m]\n"));
 		else
-			return (!ft_putstr("\033[92mOK\033[39m]\n"));
+			return (1 && ft_putstr("\033[92mOK\033[39m]\n"));
 	}
 	else if (WIFSIGNALED(stat_loc))
 	{
 		if (WTERMSIG(stat_loc) == SIGSEGV)
-			ft_putstr("\033[91mSEGV\033[39m]\n");
+			return (!ft_putstr("\033[91mSEGV\033[39m]\n"));
 		else if (WTERMSIG(stat_loc) == SIGBUS)
-			ft_putstr("\033[91mBUSE\033[39m]\n");
+			return (!ft_putstr("\033[91mBUSE\033[39m]\n"));
 		else
-			ft_putstr("\033[91m...\033[39m]\n");
-		return (0);
+			return (!ft_putstr("\033[91m...\033[39m]\n"));
 	}
 	else
 	{
@@ -63,8 +62,7 @@ static int		fork_and_run(t_unit_test *current)
 	{
 		if (pid == wait(&stat_loc))
 		{
-			display_status(stat_loc);
-			return (1);
+			return (display_status(stat_loc));
 		}
 		else
 			return (0);
@@ -85,5 +83,6 @@ int				run_tests(t_unit_test **list)
 		result.total += 1;
 		tmp = tmp->next;
 	}
+	ft_printf("%u/%u tests checked\n", result.ok, result.total);
 	return (0);
 }

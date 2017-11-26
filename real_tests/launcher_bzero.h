@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LAUNCHER_H
-# define LAUNCHER_H
+#ifndef LAUNCHER_BZERO_H
+# define LAUNCHER_BZERO_H
 
 int		launcher_bzero(void);
 

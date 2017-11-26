@@ -54,7 +54,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 libasm:
 	@make -C libftasm
-	@ln -fs libftasm/libfts.a libftasm.a
+	@ln -sf libftasm/libfts.a libftasm.a
 	@ln -sf libft/libft.a ..
 	@ln -sf libft/libftasm.a ..
 

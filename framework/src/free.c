@@ -21,8 +21,11 @@ void	free_list(t_unit_test *list)
 	while (list)
 	{
 		tmp = list->next;
-		free(list->name);
-		free(list);
+		free((void*)list->name);
+		free((void*)list);
+		list->name = NULL;
+		list->next = NULL;
+		list->last = NULL;
 		list = tmp;
 	}
 }

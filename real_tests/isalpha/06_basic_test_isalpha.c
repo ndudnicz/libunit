@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher_bzero.c                                :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 18:22:39 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 18:22:40 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 11:06:41 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 11:06:42 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "libunit.h"
-#include "01_basic_test_bzero.h"
+#include <string.h>
+#include <ctype.h>
 
-int		launcher_bzero(void)
+#include "libftasm.h"
+
+int			ft_06_basic_test_isalpha(void)
 {
-	t_unit_test		*list;
-
-	list = NULL;
-	ft_putendl("FT_BZERO:");
-	load_test(&list, "Basic test 01", &basic_test_bzero);
-	run_tests(&list);
-	free_list(list);
-	list = NULL;
-	return (0);
+	if (ft_isalpha(122) == isalpha(122))
+		return (0);
+	else
+		return (-1);
 }

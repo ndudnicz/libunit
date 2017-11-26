@@ -14,7 +14,7 @@
 
 #include "libftasm.h"
 
-int		basic_test_bzero(void)
+int			basic_test_bzero(void)
 {
 	char const	*s1 = ft_strdup("coucou");
 	char const	*s2 = ft_strdup(s1);

@@ -30,6 +30,6 @@ typedef struct	s_unit_test
 int				load_test(t_unit_test **list, char const *name,
 							int (*f)(void));
 int				run_tests(t_unit_test **list);
-void			free_list(t_unit_test **list);
+void			free_list(t_unit_test *list);
 
 #endif

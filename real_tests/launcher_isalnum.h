@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_launcher_bzero.c                                :+:      :+:    :+:   */
+/*   launcher.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndudnicz <ndudnicz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/25 18:22:39 by ndudnicz          #+#    #+#             */
-/*   Updated: 2017/11/25 18:22:40 by ndudnicz         ###   ########.fr       */
+/*   Created: 2017/11/25 16:19:00 by ndudnicz          #+#    #+#             */
+/*   Updated: 2017/11/25 16:19:01 by ndudnicz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "libunit.h"
-#include "01_basic_test_bzero.h"
+#ifndef LAUNCHER_ISALNUM_H
+# define LAUNCHER_ISALNUM_H
 
-int		launcher_bzero(void)
-{
-	t_unit_test		*list;
+int		launcher_isalnum(void);
 
-	list = NULL;
-	ft_putendl("FT_BZERO:");
-	load_test(&list, "Basic test 01", &basic_test_bzero);
-	run_tests(&list);
-	free_list(list);
-	list = NULL;
-	return (0);
-}
+#endif
