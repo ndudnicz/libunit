@@ -6,7 +6,7 @@ OBJ = $(SRC:%.c=%.o)
 
 FLAGS = -Wextra -Wall -Werror
 
-SRC_DIR = src
+SRC_DIR = .
 SRC_TEST_DIR = 4tests
 
 SRC =	main.c
