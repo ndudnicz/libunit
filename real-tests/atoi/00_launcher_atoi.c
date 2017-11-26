@@ -21,6 +21,7 @@
 int		launcher_atoi(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("FT_ATOI:");
@@ -29,8 +30,8 @@ int		launcher_atoi(void)
 	load_test(&list, "Upper bound test 03", &ft_03_upper_bound_test_atoi);
 	load_test(&list, "Lower bound test 04", &ft_04_lower_bound_test_atoi);
 	load_test(&list, "Basic test 05", &ft_05_basic_test_atoi);
-	run_tests(&list);
+	ret = run_tests(&list);
 	free_list(list);
 	list = NULL;
-	return (0);
+	return (ret);
 }

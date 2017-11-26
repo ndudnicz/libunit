@@ -22,6 +22,7 @@
 int		launcher(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("4 TESTS:");
@@ -29,5 +30,8 @@ int		launcher(void)
 	load_test(&list, "segv test", &segv_test);
 	load_test(&list, "buse test", &buse_test);
 	load_test(&list, "ko test", &ko_test);
-	return (run_tests(&list));
+	ret = run_tests(&list);
+	free_list(list);
+	list = NULL;
+	return (ret);
 }

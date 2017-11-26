@@ -24,6 +24,7 @@
 int		launcher_isalpha(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("FT_ISALPHA:");
@@ -35,8 +36,8 @@ int		launcher_isalpha(void)
 	load_test(&list, "Basic test 06", &ft_06_basic_test_isalpha);
 	load_test(&list, "Basic test 07", &ft_07_basic_test_isalpha);
 	load_test(&list, "Basic test 08", &ft_08_basic_test_isalpha);
-	run_tests(&list);
+	ret = run_tests(&list);
 	free_list(list);
 	list = NULL;
-	return (0);
+	return (ret);
 }

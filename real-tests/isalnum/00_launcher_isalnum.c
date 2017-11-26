@@ -27,6 +27,7 @@
 int		launcher_isalnum(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("FT_ISALNUM:");
@@ -41,8 +42,8 @@ int		launcher_isalnum(void)
 	load_test(&list, "Basic test 09", &ft_09_basic_test_isalnum);
 	load_test(&list, "Basic test 10", &ft_10_basic_test_isalnum);
 	load_test(&list, "Basic test 11", &ft_11_basic_test_isalnum);
-	run_tests(&list);
+	ret = run_tests(&list);
 	free_list(list);
 	list = NULL;
-	return (0);
+	return (ret);
 }

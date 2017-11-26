@@ -20,6 +20,7 @@
 int		launcher_isdigit(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("FT_ISDIGIT:");
@@ -27,8 +28,8 @@ int		launcher_isdigit(void)
 	load_test(&list, "Basic test 02", &ft_02_basic_test_isdigit);
 	load_test(&list, "Basic test 03", &ft_03_basic_test_isdigit);
 	load_test(&list, "Basic test 04", &ft_04_basic_test_isdigit);
-	run_tests(&list);
+	ret = run_tests(&list);
 	free_list(list);
 	list = NULL;
-	return (0);
+	return (ret);
 }

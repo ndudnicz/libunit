@@ -61,9 +61,7 @@ static int		fork_and_run(t_unit_test *current)
 	else
 	{
 		if (pid == wait(&stat_loc))
-		{
 			return (display_status(stat_loc));
-		}
 		else
 			return (0);
 	}
@@ -84,5 +82,5 @@ int				run_tests(t_unit_test **list)
 		tmp = tmp->next;
 	}
 	ft_printf("%u/%u tests checked\n", result.ok, result.total);
-	return (0);
+	return (result.ok == result.total ? 0 : -1);
 }

@@ -17,12 +17,13 @@
 int		launcher_bzero(void)
 {
 	t_unit_test		*list;
+	int				ret;
 
 	list = NULL;
 	ft_putendl("FT_BZERO:");
 	load_test(&list, "Basic test 01", &basic_test_bzero);
-	run_tests(&list);
+	ret = run_tests(&list);
 	free_list(list);
 	list = NULL;
-	return (0);
+	return (ret);
 }
