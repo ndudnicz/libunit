@@ -20,7 +20,7 @@
 
 static int		display_name(char const *name)
 {
-	ft_printf("\t%-20s: [", name);
+	ft_printf("    %-20s: [", name);
 	return (0);
 }
 

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftasm.h"
 #include "launcher_bzero.h"
 #include "launcher_isalnum.h"
 #include "launcher_isalpha.h"
@@ -18,6 +19,9 @@
 
 int		main(void)
 {
+	ft_putstr("*********************************\n");
+	ft_putstr("**      42 - Unit Tests      ****\n");
+	ft_putstr("*********************************\n");
 	launcher_bzero();
 	launcher_isalnum();
 	launcher_isalpha();
